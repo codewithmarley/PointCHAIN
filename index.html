@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The PointChain</title>
+    <style>
+        .green {
+            background-color: green;
+        }
+
+        .red {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <script src="./blockchain.js"></script>
+    <script src="./chainCode.js"></script>
+    Current Save: <p id="save">CLICK THE "SAVE" BUTTON</p>
+    <button onclick="save()">SAVE</button>
+    <br>
+    <textarea name="save_import" id="save_import" cols="30" rows="10"></textarea>
+    <button onclick="loadSave(document.getElementById('save_import').value)">OPEN</button>
+    <br>
+    <button onclick="getPoints_LEVIN(); getPoints_MARLEY()">REALOAD BALANCES</button>
+    <div id="LevinChores">
+        <h1>LEVIN: <p>Balance = <span id="levBal">0</span></p></h1>
+        <p>POSITIVE:</p>
+        <ul>
+            <li><button class="green" onclick="doChorePOS_LEVIN('Sweeping', 3)">Sweeping</button></li>
+            <li><button class="green" onclick="doChorePOS_LEVIN('Dishes Morning', 1.5)">Dishes (Morning)</button></li>
+            <li><button class="green" onclick="doChorePOS_LEVIN('Dishes Evening', 3)">Dishes (Evening/Lunch)</button></li>
+            <li><button class="green" onclick="doChorePOS_LEVIN('Clothes', 3)">Folding / Sorting clothes</button></li>
+            <li><button class="green" onclick="doChorePOS_LEVIN('School with Courage', 2)">School with Courage (15 min)</button></li>
+            <li><button class="green" onclick="doChorePOS_LEVIN('Clean Table', 0.5)">Clean table</button></li>
+            <li><button class="green" onclick="doChorePOS_LEVIN('Clean Wall', 3)">Clean wall (1 wall)</button></li>
+            <li><button class="green" onclick="doChorePOS_LEVIN('Clean Outside', 1)">Clean outside (with Marley)</button></li>
+        </ul>
+        
+
+        <p>NEGATIVE:</p>
+        <ul>
+            <li><button class="red" onclick="doChoreNEG_LEVIN('Complaining/Touching Walls/Touching Dick/Picking Buggers/Not cleaning up after yourself/Hands in face', 1)">Complaining/Touching Walls/Touching Dick/Picking Buggers/Not cleaning up after yourself/Hands in face</button></li>
+        </ul>
+    </div>
+    <div id="MarleyChores">
+        <h1>MARLEY: <p>Balance = <span id="marlBal">0</span></p></h1>
+        <p>POSITIVE:</p>
+        <ul>
+            <li><button class="green" onclick="doChorePOS_MARLEY('Sweeping', 2)">Sweeping</button></li>
+            <li><button class="green" onclick="doChorePOS_MARLEY('Dishes Morning', 1)">Dishes (Morning)</button></li>
+            <li><button class="green" onclick="doChorePOS_MARLEY('Dishes Evening', 2)">Dishes (Evening/Lunch)</button></li>
+            <li><button class="green" onclick="doChorePOS_MARLEY('Clothes', 2)">Folding / Sorting clothes</button></li>
+            <li><button class="green" onclick="doChorePOS_MARLEY('School with Courage', 1)">School with Courage (15 min)</button></li>
+            <li><button class="green" onclick="doChorePOS_MARLEY('School with Levin', 2)">School with Levin</button></li>
+            <li><button class="green" onclick="doChorePOS_MARLEY('Clean Table', 0.3)">Clean table</button></li>
+            <li><button class="green" onclick="doChorePOS_MARLEY('Clean Wall', 3)">Clean wall (1 wall)</button></li>
+            <li><button class="green" onclick="doChorePOS_MARLEY('Clean Outside', 3)">Clean outside</button></li>
+            <li><button class="green" onclick="doChorePOS_MARLEY('Clean Outside', 2)">Clean outside (with Levin)</button></li>
+        </ul>
+        
+
+        <p>NEGATIVE:</p>
+        <ul>
+            <li><button class="red" onclick="doChoreNEG_MARLEY('Complaining/Touching Walls/Touching Dick/Picking Buggers/Not cleaning up after yourself/Hands in face', 1)">Complaining/Touching Walls/Touching Dick/Picking Buggers/Not cleaning up after yourself/Hands in face</button></li>
+        </ul>
+    </div>
+</body>
+</html>
